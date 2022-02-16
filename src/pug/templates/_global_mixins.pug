@@ -94,14 +94,15 @@ mixin loop_while_sub(counter)
 
 //- works
 mixin breadcrumbs(array,add_class)
-	- add_class = add_class || ''
+	- add_class = add_class || ''	
 	ul.breadcrumbs_list(class=add_class)
 		each crumb, index in array
+			- url = crumb.url ? crumb.url : '#'
 			li.breadcrumbs_item
-				if (index == array.length - 1)
-					a.breadcrumbs_link.current_mod=crumb.text
+				if (index === array.length - 1)
+					a.breadcrumbs_link.current_mod= crumb.text
 				else
-					a.breadcrumbs_link(href= crumb.url)= crumb.text
+					a.breadcrumbs_link(href= url)= crumb.text
 
 //- works
 mixin menu(menuArray)
