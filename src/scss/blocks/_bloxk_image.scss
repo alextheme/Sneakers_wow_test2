@@ -63,6 +63,7 @@ $width_element_big: $page_width / 3 * 2;
 .block_images_two_img__list--reverse_mod,
 .block_bottom_element_page {
 	@extend %global_flex_block_row_nowrap_flex-start_stretch;
+	overflow: hidden;
 }
 
 // FIRST (TOP) BLOCK
@@ -245,7 +246,7 @@ $width_element_big: $page_width / 3 * 2;
 	position: relative;
 
 	width: 100%;
-	height: 39.79%;
+	height: 40%;
 
 	background: $color_blue;
 
