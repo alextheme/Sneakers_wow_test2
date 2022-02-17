@@ -1,2 +1,25 @@
 mixin header
 	header.header
+		.section_in
+			nav.header__navigation
+				a(class= 'header__link_logo' href= '#')
+					+picture({
+						typeJpeg: false,
+						png: true,
+						media: 1024,
+						is2x: false,
+						contain: false,
+						class: 'header__logo',
+						img: `logo`,
+						img_mob: `logo`
+					})
+			
+				+menu({
+					gl_mod: 'main',
+					gl_class: 'header_menu',
+					items: [
+						{ url: '', title: 'Work', active: true },
+						{ url: '', title: 'Info' },
+						{ url: '', title: 'Schedule a call' },
+					]
+				})

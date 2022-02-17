@@ -17,34 +17,16 @@ const message = 'Developed by Glivera-team https://glivera-team.com/';
 console.info('%c%s', styles, message);
 
 // -------------------  dev widget
-if (GLOBAL_VARS.projectDevStatus) {
-	pageWidgetInit();
-	console.log(process.env.NODE_ENV);
-}
+// if (GLOBAL_VARS.projectDevStatus) {
+// 	pageWidgetInit();
+// 	console.log(process.env.NODE_ENV);
+// }
 // -------------------  dev widget###
 
 // -------------------  global variables
 
 const readyFunc = () => {
 	console.log('ready');
-	function accordion(title, content) {
-		// hide all content
-		let accordionTitle = $(title);
-		let accordionContent = $(content);
-		$(accordionContent).hide();
-
-		$(accordionTitle).on('click', function () {
-			let $this = $(this);
-			$this.parent().toggleClass('active_mod').siblings().removeClass('active_mod');
-			$(accordionContent).slideUp();
-
-			if (!$this.next().is(':visible')) {
-				$this.next().slideDown();
-			}
-		});
-	}
-
-	accordion('.accordion_title', '.accordion_content');
 };
 
 const loadFunc = () => {

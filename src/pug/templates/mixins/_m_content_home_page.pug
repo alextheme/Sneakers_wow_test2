@@ -1,0 +1,31 @@
+mixin arrayImages(data)
+	- className = data.className ? data.className : ''
+	- mod = data.mod ? `--${data.mod}` : ''
+	ul(class= `${className}__list${mod}`)
+		each img in data.images 
+			li(class= `${className}__item${mod}`)
+				if (img.url)
+					a(href= img.url class= `${className}__link${mod}`) 				
+						+picture({
+							typeJpeg: false,
+							png: data.png,
+							media: 1024,
+							is2x: false,
+							contain: false,
+							class: `${className}__img${mod}`,
+							img: img.name,
+							img_mob: img.name
+						})
+					a(href= img.url class= `${className}__link_text${mod}`)= img.text	
+				else
+					+picture({
+						typeJpeg: false,
+						png: data.png,
+						media: 1024,
+						is2x: false,
+						contain: false,
+						class: `${className}__img${mod}`,
+						img: img,
+						img_mob: img
+					})
+

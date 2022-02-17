@@ -1,6 +1,6 @@
 //---------------------------------------------fonts
 $font_path: "../fonts/";
-$font_1: 'RobotoCondensed', sans-serif;
+$font_1: 'Lato', sans-serif;
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
 
@@ -8,9 +8,12 @@ $font_size_base: 1.6rem;
 $white: #fff;
 $black: #000;
 
-$color_text_base: $black;
+$color_text_base: #ffffff;
 $color_link_base:#4aa3df;
 $body_bg: $white;
+
+$color_red: #F6285B;
+$color_blue: #223A59;
 //---------------------------------------------colors###
 
 //---------------------------------------------z-index
@@ -22,12 +25,12 @@ $z-index: (
 //---------------------------------------------z-index###
 
 //---------------------------------------------layout
-$page_width: 96rem;
+$page_width: 144rem;
 
 //---------------------------------------------layout###
 
 //---------------------------------------------global values
-$gl_radius:.5rem;
+$gl_radius:.4rem;
 //---------------------------------------------global values###
 
 //---------------------------------------------media points
