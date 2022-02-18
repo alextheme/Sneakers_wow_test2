@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 // ------------------- imports
 import $ from 'jquery';
 import { GLOBAL_VARS } from 'utils/constants';
@@ -6,6 +7,7 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 // ------------------- imports###
 
 // ------------------  import components
+import { openMenu } from 'components/menu';
 // ------------------  import components###
 
 window.jQuery = $;
@@ -17,10 +19,10 @@ const message = 'Developed by Glivera-team https://glivera-team.com/';
 console.info('%c%s', styles, message);
 
 // -------------------  dev widget
-// if (GLOBAL_VARS.projectDevStatus) {
-// 	pageWidgetInit();
-// 	console.log(process.env.NODE_ENV);
-// }
+if (GLOBAL_VARS.projectDevStatus) {
+	pageWidgetInit();
+	console.log(process.env.NODE_ENV);
+}
 // -------------------  dev widget###
 
 // -------------------  global variables
@@ -31,6 +33,8 @@ const readyFunc = () => {
 
 const loadFunc = () => {
 	console.log('page load');
+
+	$('.button_open_menu').on('click', openMenu);
 };
 
 documentReady(() => {

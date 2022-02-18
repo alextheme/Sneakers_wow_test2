@@ -233,7 +233,7 @@
 }
 
 
-@mixin hover_transition_opacity($opacity: .8) {
+@mixin hover_transition_opacity($opacity: .6) {
 	@extend %transition_opacity;
 
 	&:hover {

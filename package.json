@@ -1,7 +1,7 @@
 {
   "author": "Glivera-team",
   "name": "glivera-webpack-template",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Webpack 5, pug, scss, svg sprite template",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config settings/webpack.dev.config.js --mode=development",

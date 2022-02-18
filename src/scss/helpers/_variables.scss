@@ -8,7 +8,7 @@ $font_size_base: 1.6rem;
 $white: #fff;
 $black: #000;
 
-$color_text_base: #ffffff;
+$color_text_base: $white;
 $color_link_base:#4aa3df;
 $body_bg: $white;
 
@@ -26,6 +26,7 @@ $z-index: (
 
 //---------------------------------------------layout
 $page_width: 144rem;
+$page_width_: 1440;
 
 //---------------------------------------------layout###
 
@@ -36,7 +37,7 @@ $gl_radius:.4rem;
 //---------------------------------------------media points
 $point_1: 1200px;
 $point_2: 1024px;
-$point_3: 1023px;
+$point_3: 900px;
 $point_4: 768px;
 $point_5: 640px;
 $point_6: 480px;
