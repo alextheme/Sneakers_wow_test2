@@ -20,11 +20,13 @@
 }
 
 .header__navigation {
+	@extend %global_flex_block_row_wrap_space_between_center;
+	
 	position: relative;
 
-	@extend %global_flex_block_row_wrap_space_between_center;
-
 	height: 100%;
+
+	padding-left: 4.6rem;
 
 	background: $color_red;
 }
@@ -33,9 +35,16 @@
 	width: 15.6rem;
 	height: 3.5rem;
 
-	margin-left: 4.6rem;
-
 	background: $white;
+}
+
+.header__logo {
+	img {
+		width: 15.6rem;
+		height: auto;
+		
+		object-fit: cover;
+	}
 }
 
 .header_menu__list {
@@ -49,21 +58,15 @@
 }
 
 .header_menu__item {
-	&:last-child {
-		margin-left: 2rem;
+	margin: 0 3.8rem;
 
+	&:last-child {
+		margin: 0 0 0 3.8rem;
+		
 		background: $color_blue;
 
 		.header_menu__link {
-			width: 30rem; // TODO ?
-		}
-	}
-
-	&:not(:last-child) {
-
-		// all elements except the last
-		.header_menu__link {
-			padding: 0 3.26rem;
+			width: 30rem;
 		}
 	}
 }
@@ -71,17 +74,16 @@
 .header_menu__link {
 	@extend %transition_opacity;
 
-	height: 100%;
+	display: block;
 
-	padding: 0 6rem;
+	height: 100%;
 
 	text-align: center;
 	white-space: nowrap;
 
-
 	&:hover {
-		opacity: .5;
 		@extend %transition_opacity;
+		opacity: .5;
 	}
 }
 

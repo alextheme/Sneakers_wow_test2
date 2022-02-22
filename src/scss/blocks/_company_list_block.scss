@@ -1,0 +1,43 @@
+$height_block_comp_list: 17.6rem;
+
+.list_of_company_logos {
+	height: 17.6rem;
+}
+
+.list_of_company_logos__list {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	overflow-x: auto;
+
+	@include scrollbars(16px, 8px, $color_red, $color_blue);
+}
+
+.list_of_company_logos__item {
+	height: $height_block_comp_list;
+	margin-right: 40px;
+
+	&:first-child {
+		margin-left: 40px;
+	}
+}
+
+.list_of_company_logos__link {
+	display: inline-block;
+	
+	height: $height_block_comp_list;
+	
+	line-height: 10rem;
+
+	.cover_img {
+		width: auto;
+		height: 2.6rem;
+	}
+
+	@include hover_transition_opacity;
+}
+
+.list_of_company_logos__img {
+	display: block;
+	
+	height: $height_block_comp_list;
+}

@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title test
+		style(type="text/css")
+			| .ale_wrapper {
+			|		max-width: 1440px;
+			|		margin: 0 auto;
+			| }
+			| .ale_2 {
+			|		width: 100%;
+			|		height: calc(min(100vw, 1440px) * 550 / 1440);
+			|	}
+			| .ale_wrap_3 { 
+			|		display: flex;
+			|	}
+			| .ale_3 {
+			|		width: calc(100% / 3);
+			|		height: calc(min(100vw, 1440px) * 480 / 1440);
+			|	}
+			| .img {
+			|   width: 100%;
+			|   height: 100%; 
+			|   object-fit: cover;
+			|   
+			//- |   vertical-align: bottom; 
+			//- |   line-height: 0; 
+			|	}
+	body 
+		.ale_wrapper
+			.ale_2
+				img(class= 'img' src= './images/home_01.jpg')
+			.ale_2
+				img(class= 'img' src= './images/home_05.jpg')
+		.ale_wrapper.ale_wrap_3
+			.ale_3
+				img(class= 'img' src= './images/home_02.jpg')
+			.ale_3
+				img(class= 'img' src= './images/home_03.jpg')
+			.ale_3
+				img(class= 'img' src= './images/home_04.jpg')

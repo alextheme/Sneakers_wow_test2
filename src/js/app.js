@@ -1,9 +1,11 @@
+/* eslint-disable import/extensions */
 /* eslint-disable import/order */
 // ------------------- imports
 import $ from 'jquery';
 import { GLOBAL_VARS } from 'utils/constants';
 import { documentReady, pageLoad } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
+import magnific from 'magnific-popup';
 // ------------------- imports###
 
 // ------------------  import components
@@ -35,6 +37,8 @@ const loadFunc = () => {
 	console.log('page load');
 
 	$('.button_open_menu').on('click', openMenu);
+
+	$('.item_label_link--video_cc_mod').magnificPopup({ type: 'iframe' });
 };
 
 documentReady(() => {

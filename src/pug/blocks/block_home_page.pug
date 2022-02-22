@@ -1,109 +1,91 @@
-.block_image_top
-	+picture({
-		typeJpeg: false,
-		png: false,
-		media: 1024,
-		is2x: false,
-		contain: false,
-		class: 'block_image__picture',
-		img: `home_01`,
-		img_mob: `home_01`
-	})
-	a.block_image_top__link--center(href= '#')
-		+icon('wow_big')
-	a.block_image_top__link(href= '#') NEW BALANCE SHOES | VIDEO + ART DIRECTION
 
+section.home_page_gallery
+	+gallery('home_page_gallery', [
+		{
+			mod: 'full_top',
+			img: { name: 'home_01', name_mob: 'home_01' },
+			labels: [
+				{icon: 'wow', text_top: `We’re a`, text_bottom: 'Factory', position: 'cc'},
+				{text: ['NEW BALANCE SHOES', 'VIDEO + ART DIRECTION EDITORIAL + MOTION EDITORIAL + MOTION EDITORIAL + MOTION EDITORIAL + MOTIONEDITORIAL + MOTIONEDITORIAL + MOTION EDITORIAL + MOTION EDITORIAL + MOTION EDITORIAL + MOTION EDITORIAL + MOTIONEDITORIAL + MOTION EDITORIAL + MOTION'], position: 'lb' },
+			],
+		},	
 
-.block_images_three_img
-	+arrayImages({
-		className: 'block_images_three_img', 
-		mod: null,
-		images: [
-			{ name: 'home_02', text: 'disconnect', url: '#' },
-			{ name: 'home_03', text: 'mit', url: '#' },
-			{ name: 'home_04', text: 'Fabrk', url: '#' },
-		],
-	})
+		{
+			mod: 'one_third',
+			img: { name: 'home_02', name_mob: 'home_02' },
+			url: '#',
+			labels: [{ text: ['disconnect disconnect','eeeeeeeeee ffffffffffffff'], position: 'cb' }],
+		},
+		{
+			mod: 'one_third',
+			img: { name: 'home_03', name_mob: 'home_03' },
+			url: '#',
+			labels: [{ text: ['mit'], position: 'cb' }],
+		},
+		{
+			mod: 'one_third',
+			img: { name: 'home_04', name_mob: 'home_04' },
+			url: '#',
+			labels: [{ text: ['fabrk'], position: 'cb' }],
+		},
 
-
-.block_video_all_width
-	+picture({
-		typeJpeg: false,
-		png: false,
-		media: 1024,
-		is2x: false,
-		contain: false,
-		class: 'block_video_all_width__image',
-		img: `home_05`,
-		img_mob: `home_05`
-	})
-	.block_video_all_width__top_text 
-		span.block_video_all_width__descr Your nimble team is waiting!
-		span.block_video_all_width__value 339.229.0066
-	a(href= '#' class= `block_video_all_width__link_start_video`)
-	a(href= '#' class= `block_video_all_width__link_bottom_text`) PAYPAL | EDITORIAL + MOTION
-	
-
-.block_images_two_img
-	+arrayImages({
-		className: 'block_images_two_img', 
-		mod: null,
-		images: [{ name: 'home_06', url: '#' }, { name: 'home_07', url: '#', text: 'HOE | AUDIOGRAMS' }],
-	})
-
-
-.block_images_two_img
-	+arrayImages({
-		className: 'block_images_two_img', 
-		mod: 'reverse_mod',
-		images: [{ name: 'home_08', url: '#' }, { name: 'home_09', url: '#' }],
-	})
-
-
-.block_bottom_element_page
-	.block_bottom_element_page__left_element
-		.block_bottom_element_page__info_block
-			.absolute_position 
-				.info_block__content
-					.info_block__quote Nimblebot continues to impress and wow us with their dedicated attitude and wver-the-top delivery, everytime.
-					.info_block__author
-						.info_block__name Usman Ahmed
-						.info_block__position Head of Globl Policy
-						a.info_block__link(href= '#')
-							+picture({
-								typeJpeg: false,
-								png: true,
-								media: 1024,
-								is2x: false,
-								contain: false,
-								class: 'icon_paypal',
-								img: 'paypal',
-								img_mob: 'paypal',
-							})
-
-		.block_bottom_element_page__social_block 
-			.absolute_position 
-				+social({
-					items: [
-						{ name_icon: 'facebook', mod_link: '#', mod_icon: '' },
-						{ name_icon: 'instagram', mod_link: '#', mod_icon: '' },
-						{ name_icon: 'vimeo', mod_link: '#', mod_icon: '' },
-						{ name_icon: 'youtube', mod_link: '#', mod_icon: '' },
-					]
-				})
-
-	.block_bottom_element_page__right_element
-		+picture({
-			typeJpeg: false,
-			png: false,
-			media: 1024,
-			is2x: false,
-			contain: false,
-			class: 'block_bottom_element_page__image',
-			img: `home_10`,
-			img_mob: `home_10`
-		})
-		a(href= '#' class= `block_bottom_element_page__right_element__link_start_video`)
+		{
+			mod: 'full',
+			img: { name: 'home_05', name_mob: 'home_05' },
+			labels: [
+				{video: true, position: 'cc', url: 'https://www.youtube.com/watch?v=WgqRXRkFYec' },
+				{text: ['Your nimble team is waiting!', '339.229.0066'], position: 'lt' },
+				{text: ['PAYPAL', 'EDITORIAL + MOTION',], position: 'lb' },
+			],
+		},
+		{
+			mod: 'two_third',
+			img: { name: 'home_06', name_mob: 'home_06' },
+			url: '#',
+		},
+		{
+			mod: 'one_third',
+			img: { name: 'home_07', name_mob: 'home_07' },
+			url: '#',
+			labels: [{ text: ['HOE AUDIOGRAMS AUDIOGRAMS', 'AUDIOGRAMS AUDIOGRAMS AUDIOGRAMS AUDIOGRAMS AUDIOGRAMS'], position: 'cb' }],
+		},
+		{
+			mod: 'one_third',
+			img: { name: 'home_08', name_mob: 'home_08' },
+			url: '#',
+		},
+		{
+			mod: 'two_third',
+			img: { name: 'home_09', name_mob: 'home_09' },
+			labels: [{text: ['F1ZZ', 'BRANDING + ANIMATION',], position: 'lb' }],
+			url: '#',
+		},
+		{
+			mod: 'one_third_bottom',
+			img: null,
+			labels: null,
+			quote: { 
+				text: 'Nimblebot continues to impress and wow us with their dedicated attitude and wver-the-top delivery, everytime. Nimblebot continues to impress and wow us with their dedicated attitude and wver-the-top delivery, everytime',
+				author: { name: 'Usman Ahmed', position: 'Head of Globl Policy', icon: '', img: 'paypal'},
+			},
+			social: {
+				items: [
+					{ name_icon: 'facebook', mod_link: 'fb', mod_icon: '' },
+					{ name_icon: 'instagram', mod_link: 'in', mod_icon: '' },
+					{ name_icon: 'vimeo', mod_link: 'vm', mod_icon: '' },
+					{ name_icon: 'youtube', mod_link: 'yt', mod_icon: '' },
+				],
+			},
+		},
+		{
+			mod: 'two_third_bottom',
+			img: { name: 'home_10', name_mob: 'home_10' },
+			labels: [
+				{video: true, position: 'cc', url: 'https://vimeo.com/677324350' },
+				{text: ['HBO + NCTA', 'ANIMATION',], position: 'lb' },
+			],
+		},
+	])
 
 
 .list_of_company_logos

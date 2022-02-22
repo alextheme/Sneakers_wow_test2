@@ -1,130 +1,31 @@
 .home_page_gallery {
+	a {
+		@include hover_transition_opacity;
+	}
+
 	.list {
 		display: flex;
     flex-wrap: wrap;
 	}
 
-	a {
-		@include hover_transition_opacity;
-	}
-
-	// item mods
 	.item {
 		position: relative;
-
-		&.item--full_top_mod {
-			padding-top: calc(550 / $page_width_ * 100%); 
-			width: 100%;
-		}
-
-		&.item--full_mod {
-			padding-top: calc(650 / $page_width_ * 100%); 
-			width: 100%;
-		}
-
-		&.item--one_third_mod {
-			padding-top: calc(480 / $page_width_ * 100%); 
-			width: 33.33333%;
-		}
-
-		&.item--two_third_mod {
-			padding-top: calc(480 / $page_width_ * 100%); 
-			width: 66.66666%;
-		}
-
-		&.item--one_third_bottom_mod {
-			width: 33.33333%;
-			
-			.item_author {
-				position: relative;
-				
-				padding-top: 100%; 
-				
-				background: $color_red;
-			}
-
-			.item_author__quote {
-				position: absolute;
-				top: 0;
-				left: 0;
-				
-				width: 100%;
-				
-				padding: 4rem;
-				
-				font-size: 2.4rem;
-				font-weight: 700;
-				line-height: 3.4rem;
-			}
-				
-			.item_author__author {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				
-				width: 100%;
-				
-				padding: 4rem;
-				
-				font-size: 1.8rem;
-				font-weight: 400;
-				line-height: 2.4rem;
-				
-				.item_author__name, .item_author__pos {
-					display: block;
-				}
-				
-				.item_author__link {
-					display: block;
-					
-					width: 9rem;
-					height: 2.2rem;
-				}
-			}
-			
-			.item_social {
-				position: relative;
-				
-				padding-top: 66.666666%;
-				
-				background: $color_blue;
-				
-				.social_list {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-
-					display: flex;
-
-					padding: 5rem 5.6rem;
-
-					.social_item {
-						@include hover_transition_opacity;
-
-						&:not(:first-child) {
-							margin-left: 2.6rem;
-						}
-					}
-
-					.social_link .icon {
-						width: 3rem;
-						height: 3rem;
-					}
-				}
-			}
-		}
-
-		&.item--two_third_bottom_mod {
-			padding-top: calc(797 / $page_width_ * 100%); 
-			width: 66.66666%;
-		}
+		display: flex;
 	}
 
+	.item_link {
+		display: block;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	// picture //
 	.item_picture {
 		position: absolute;
 		top: 0;
 		left: 0;
-		
+
 		width: 100%;
 		height: 100%;
 
@@ -133,101 +34,285 @@
 		}	
 	}
 
-	.item_label_link--icon_cc_mod {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		
-		// width: min(20rem, 14vw);
+	/* item mods */
+	
+	.item--full_top_mod {
+		height: calc(min(100vw, $page_width) * 550 / $page_width_);
+		width: 100%;
+	}
 
-		transform: translate(-50%, -60%);
+	.item--full_mod {
+		height: calc(min(100vw, $page_width) * 650 / $page_width_);
+		width: 100%;
+		flex-direction: column;
+	}
 
-		.item_label_img  {
-			width: min(20rem, 14vw);
-			height: auto;
+	.item--one_third_mod {
+		height: calc(min(100vw, $page_width) * 480 / $page_width_);
+		width: calc(100% / 3);
+
+		align-items: flex-end;
+
+		.item_link {
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 
-	.item_label_link--video_cc_mod {
+	.item--two_third_mod {
+		height: calc(min(100vw, $page_width) * 480 / $page_width_);
+		width: calc(100% / 3 * 2);
+
+		.item_link {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.item--one_third_bottom_mod {
+		flex-direction: column;
+		width: calc(100% / 3);
+		
+		.item_author {		
+			display: flex;
+			flex-direction: column;
+
+			padding: 4rem;
+			
+			height: calc(min(100vw, $page_width) * 480 / $page_width_);
+			
+			background: $color_red;
+		}
+
+		.item_author__quote {				
+			width: 100%;
+			
+			font-size: min(calc(0.4rem + 1.4vw), 2.4rem);
+			font-weight: 700;
+			line-height: min(calc(1.4rem + 1.4vw), 3.4rem);
+		}
+			
+		.item_author__author {
+			width: 100%;
+
+			margin-top: auto;
+						
+			font-size: calc(0.8rem + 1vw);
+			font-weight: 400;
+			line-height: 2.4rem;
+		}
+			
+		.item_author__name, .item_author__pos {
+			display: block;
+		}
+		
+		.item_author__link {
+			display: block;
+			
+			width: 9rem;
+			height: 2.2rem;
+		}
+		
+		.item_social {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+
+			padding: 5rem 5.6rem;
+
+			height: calc(min(100vw, $page_width) * 317 / $page_width_);
+			
+			background: $color_blue;
+		}
+
+		.social_list {
+			display: flex;
+		}
+
+		.social_item {
+			@include hover_transition_opacity;
+
+			margin-right: 2.6rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.social_link .icon {
+			width: 3rem;
+			height: 3rem;
+		}
+	}
+
+	.item--two_third_bottom_mod {
+		height: calc(min(100vw, $page_width) * 797 / $page_width_);
+		width: 66.66666%;
+	}
+
+
+	/* item label box */
+	
+	.item_label_box {
+		display: flex;
+		
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		text-transform: uppercase;
+	}	
+	
+	.item_label_box--cb_mod {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 0 3.2rem 2.8rem;
+		height: min-content;
+	}
+
+	.item_label_box--lb_mod {
+		align-items: flex-end;
+		padding: 0 3.19% 3.05%; // 4.4rem & 4.6rem
+	}
+
+
+	.item_label_box--lt_mod {
+		position: relative;
+
+		width: calc(100% / 3 * 2);
+		height: min-content;
+
+		padding: 3.4rem 4.6rem;
+		
+		background: $color_red;
+
+		.item_label_link--lt_mod:last-child {
+			margin-left: auto;
+		}
+
+		.item_label_link--lt_mod::before {
+			display: none;
+		}
+	}
+
+
+	/* item label link */
+
+	.item_label_link {
+		white-space: normal;
+	}
+
+	.item_label_link--psevdo_mod {
+		position: relative;
+		margin-right: 1.8rem;	
+		min-width: fit-content;			
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			width: 1px;
+			height: 2rem;
+			
+			content: '';
+			
+			background: $color_text_base;
+			
+			transform: translate(1rem);
+		}
+	}
+
+	// icon label //
+	.item_label_link--icon_cc_mod {
 		position: absolute;
-    top: 50%;
-    left: 50%;
-    
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		width: min(20rem, 15vw);
+		height: auto;
+
+		margin: 0 auto;
+
+		$font_size: 1.4rem;
+		font-size: calc($font_size + 1vw);
+		line-height: calc($font_size + 1vw);
+		font-weight: 400;
+		text-align: center;
+		white-space: nowrap;
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			transform: translate(0, -2em);
+			
+			content: '';
+			
+			width: 100%;
+			height: 1.5rem;
+			
+			background: $color_red;
+		}
+
+		.item_label_link__text_top {
+			display: block;
+
+			margin-bottom: 0.48em;
+		}
+
+		.icon_wow {
+			width: min(20rem, 15vw);
+			height: min(4.8rem, 15vw);
+		}
+
+		.item_label_link__text_bottom {
+			display: block;
+
+			letter-spacing: 0.777rem;
+			text-transform: uppercase;
+
+			margin-top: 2.2em;
+		}
+
+		@media screen and (max-width: 900px) {
+			$font_size: 2rem;
+			font-size: $font_size;
+			line-height: $font_size;
+		}
+	}
+
+	// Video label
+	.item_label_link--video_cc_mod {
+		@extend %transition_all;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
 		width: 0;
     height: 0;
     
 		border-style: solid;
     border-width: 3.2rem 0 3.2rem 5rem;
     border-color: transparent transparent transparent #ffffff;
-    
-		transform: translate(-50%, -50%);
 		
-		@extend %transition_all;
-
 		&:hover {
+			@extend %transition_all;
+
 			opacity: 1;
 			border-color: transparent transparent transparent $color_red;
-			@extend %transition_all;
-		}
-	}
-	
-	.item_label_box {
-		position: absolute;
-		
-		text-transform: uppercase;
-		white-space: nowrap;
-
-		&.item_label_box--cb_mod {
-			left: 50%;
-			bottom: 0;
-			transform: translate(-50%, -3rem);
-		}
-
-		&.item_label_box--lb_mod {
-			left: 0;
-			bottom: 0;
-			transform: translate(4.6rem, -3.8rem);
-		}
-
-		&.item_label_box--lt_mod {
-			left: 0;
-			top: 0;
-
-			display: flex;
-			justify-content: space-between;
-
-			width: 66.66666%;
-			
-			padding: 3.4rem 4.6rem;
-			
-			background: $color_red;
-
-			.item_label_link--lt_mod::before {
-				display: none;
-			}
-		}
-
-		.item_label_link {
-
-			&:not(:first-child) {
-				position: relative;
-				margin-left: 2rem;
-	
-				&::before {
-					position: absolute;
-					top: 0;
-					left: 0;
-	
-					width: 1px;
-					height: 2rem;
-					
-					content: '';
-					
-					background: $color_text_base;
-					
-					transform: translate(-1rem);
-				}
-			}
 		}
 	}
 }
@@ -244,8 +329,9 @@
 		width: 100%;
 		order: 1;
 
-		.item_author { padding-top: 40% }
-		.item_social { padding-top: 20% }
+		.item_author { min-height: 30rem; height: auto; }
+
+		.item_social { height: auto; }
 	}
 
 	.home_page_gallery .item.item--two_third_bottom_mod {
@@ -254,57 +340,36 @@
 }
 
 @media only screen and (max-width: $point_4) {
-
-}
-
-@media only screen and (max-width: $point_5) {
   .home_page_gallery .item.item--one_third_mod,
 	.home_page_gallery .item.item--two_third_mod,
 	.home_page_gallery .item.item--full_mod {
-		padding-top: 50%;
     width: 50%;
+		height: calc(min(100vw, $page_width) * 480 / $page_width_);
 	}
 
 	.home_page_gallery .item_label_box.item_label_box--lt_mod {
 		width: 100%;
 		padding: 1.2rem 2rem;
 	}
+}
 
+@media only screen and (max-width: $point_5) {
 	.home_page_gallery .item_label_box {
 		white-space: normal;
 	}
 	.home_page_gallery .item_label_link--video_cc_mod {
 		border-width: 2.4rem 0 2.4rem 4rem;
 	}
-
-	.home_page_gallery .item.item--one_third_bottom_mod {
-		.item_author { padding-top: 70% }
-		.item_social { padding-top: 20% }
-	}
 }
 
 @media only screen and (max-width: $point_6) {
-  .home_page_gallery .item.item--full_top_mod {
-		padding-top: 50%;
-    width: 50%;
-	}
-	.home_page_gallery .item.item--two_third_bottom_mod {
-		width: 50%;
-	}
-}
-
-@media only screen and (max-width: $point_7) {
 	.home_page_gallery .item.item--one_third_mod,
 	.home_page_gallery .item.item--two_third_mod,
 	.home_page_gallery .item.item--full_mod,
-  .home_page_gallery .item.item--full_top_mod {
-		padding-top: 50%;
+  .home_page_gallery .item.item--full_top_mod,
+	.home_page_gallery .item.item--two_third_bottom_mod {
     width: 100%;
-	}
-
-	.home_page_gallery .item.item--one_third_bottom_mod {
-		.item_author { padding-top: 100% }
-		.item_social { padding-top: 50% }
+		height: calc(min(100vw, $page_width) * 900 / $page_width_);
 	}
 }
 

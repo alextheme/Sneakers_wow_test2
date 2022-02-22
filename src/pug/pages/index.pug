@@ -1,7 +1,7 @@
 extends ../layout/_layout
 
 block vars
-	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index'}
+	- array = {body_class:'test_2v2', layout_mod:'test2v2_mod', sub_keywords:'test2v2subkey', title_inner:'Test2v2'}
 block content_block
-	section.section.demo_mod
-		h1.section_title Hola #[a.test(href='https://glivera-team.com/') Maketodor] :)
+	.section_in
+		include ./../blocks/block_home_page

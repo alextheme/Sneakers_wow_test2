@@ -1,0 +1,14 @@
+mixin author_info(quote)
+	if (quote)
+		p.item_author__quote= quote.text
+		p.item_author__author
+			span.item_author__name= quote.author.name
+			span.item_author__pos= quote.author.position 
+			a(class= 'item_author__link' href= '#')
+				if (quote.author.icon) 
+					+icon(quote.author.icon)
+				else if (quote.author.img) 
+					img(class= 'item_author__img' src= `${'images/'}${quote.author.img}.png`)
+				else 	
+					span ->
+

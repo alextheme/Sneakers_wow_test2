@@ -38,6 +38,7 @@ body {
 
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	min-height: 100%;
 	height: auto !important;
 
@@ -54,7 +55,6 @@ body {
 
 a {
 	text-decoration: none;
-	// color: $color_link_base;
 	color: inherit;
 
 	&:hover,
@@ -72,10 +72,6 @@ img {
 	// remove 3px gap below image
 	vertical-align: bottom;
 	line-height: 0;
-}
-
-.elements_list {
-	padding: 3rem;
 }
 
 //------------------------------------------------------------base styles###

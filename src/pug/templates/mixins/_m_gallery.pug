@@ -1,0 +1,44 @@
+//- item{ mod, img{ name, name_mob }, url, labels{ icon, video, text, position } }
+mixin gallery(gl_class, data) 
+	ul(class= `${gl_class} list`)
+		each item in data 	
+			- isUrl = item.url ? true : false
+			- islabels = item.labels ? true : false
+
+			li(class= `item item--${item.mod}_mod`)
+				if (item.img && isUrl)
+					a(class= `item_link` href= `${item.url}`)
+						+picture({
+							typeJpeg: false,
+							png: false,
+							media: 1024,
+							is2x: false,
+							contain: false,
+							class: 'item_picture',
+							img: item.img.name,
+							img_mob: item.img.name_mob,
+						})
+					if (islabels)
+						+labels(item.labels)
+
+				else if (item.img)
+					+picture({
+						typeJpeg: false,
+						png: false,
+						media: 1024,
+						is2x: false,
+						contain: false,
+						class: 'item_picture',
+						img: item.img.name,
+						img_mob: item.img.name_mob,
+						})
+					if (islabels)
+						+labels(item.labels)
+
+				else 	
+					.item_author
+						if (item.quote)
+							+author_info(item.quote)
+					.item_social
+						if (item.social)
+							+social(item.social)
