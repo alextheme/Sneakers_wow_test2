@@ -2,23 +2,19 @@
 mixin labels(labelsData)
 	each label in labelsData
 		if (label.icon)
-			a(class= `item_label_link item_label_link--icon_${label.position}_mod` href= '#')
+			a(class= `item_icon_link item_icon_link--${label.position}_mod` href= '#')
 				if (label.text_top)
-					span.item_label_link__text_top= label.text_top
+					span.item_icon_link__text_top= label.text_top
 				+icon(label.icon)
 				if (label.text_bottom)
-					span.item_label_link__text_bottom= label.text_bottom
-
-		if (label.png)
-			a(class= `item_label_link item_label_link--icon_${label.position}_mod` href= '#')
-				img(class= 'item_label_img' src= `${assetsImage}${label.png}.png`)
+					span.item_icon_link__text_bottom= label.text_bottom
 
 		if (label.video && label.url)
-			a(class= `item_label_link item_label_link--video_${label.position}_mod` href= label.url)
+			a(class= `item_video_link item_video_link--${label.position}_mod` href= label.url)
 
 		if (label.text)
-			span(class= `item_label_box item_label_box--${label.position}_mod`)
+			span(class= `item_text_box item_text_box--${label.position}_mod`)
 				each text, index in label.text
-					- mod = `item_label_link--${label.position}_mod`
-					- psevdoMod = label.text.length > 1 && index === 0 ? `item_label_link--psevdo_mod` : ''
-					a(class= `item_label_link ${mod} ${psevdoMod}` href= '#')= text
+					- mod = `item_text_link--${label.position}_mod`
+					- psevdo = label.text.length > 1 && index === 0 ? `item_psevdo_elem` : ''
+					a(class= `item_text_link ${mod} ${psevdo}` href= '#')= text

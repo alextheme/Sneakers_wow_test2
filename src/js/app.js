@@ -38,7 +38,7 @@ const loadFunc = () => {
 
 	$('.button_open_menu').on('click', openMenu);
 
-	$('.item_label_link--video_cc_mod').magnificPopup({ type: 'iframe' });
+	$('.item_video_link').magnificPopup({ type: 'iframe' });
 };
 
 documentReady(() => {

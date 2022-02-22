@@ -153,9 +153,9 @@
 	}
 
 
-	/* item label box */
+	/* item text box */
 	
-	.item_label_box {
+	.item_text_box {
 		display: flex;
 		
 		width: 100%;
@@ -165,7 +165,7 @@
 		text-transform: uppercase;
 	}	
 	
-	.item_label_box--cb_mod {
+	.item_text_box--cb_mod {
     justify-content: center;
     flex-wrap: wrap;
 
@@ -173,13 +173,13 @@
 		height: min-content;
 	}
 
-	.item_label_box--lb_mod {
+	.item_text_box--lb_mod {
 		align-items: flex-end;
 		padding: 0 3.19% 3.05%; // 4.4rem & 4.6rem
 	}
 
 
-	.item_label_box--lt_mod {
+	.item_text_box--lt_mod {
 		position: relative;
 
 		width: calc(100% / 3 * 2);
@@ -189,23 +189,19 @@
 		
 		background: $color_red;
 
-		.item_label_link--lt_mod:last-child {
+		.item_text_link--lt_mod:last-child {
 			margin-left: auto;
 		}
 
-		.item_label_link--lt_mod::before {
+		.item_text_link--lt_mod::before {
 			display: none;
 		}
 	}
 
 
-	/* item label link */
+	/* item links */
 
-	.item_label_link {
-		white-space: normal;
-	}
-
-	.item_label_link--psevdo_mod {
+	.item_psevdo_elem {
 		position: relative;
 		margin-right: 1.8rem;	
 		min-width: fit-content;			
@@ -226,8 +222,8 @@
 		}
 	}
 
-	// icon label //
-	.item_label_link--icon_cc_mod {
+	// icon link //
+	.item_icon_link--cc_mod {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -265,7 +261,7 @@
 			background: $color_red;
 		}
 
-		.item_label_link__text_top {
+		.item_icon_link__text_top {
 			display: block;
 
 			margin-bottom: 0.48em;
@@ -276,7 +272,7 @@
 			height: min(4.8rem, 15vw);
 		}
 
-		.item_label_link__text_bottom {
+		.item_icon_link__text_bottom {
 			display: block;
 
 			letter-spacing: 0.777rem;
@@ -293,7 +289,7 @@
 	}
 
 	// Video label
-	.item_label_link--video_cc_mod {
+	.item_video_link--cc_mod {
 		@extend %transition_all;
 
 		position: absolute;
@@ -347,17 +343,17 @@
 		height: calc(min(100vw, $page_width) * 480 / $page_width_);
 	}
 
-	.home_page_gallery .item_label_box.item_label_box--lt_mod {
+	.home_page_gallery .item_text_box.item_text_box--lt_mod {
 		width: 100%;
 		padding: 1.2rem 2rem;
 	}
 }
 
 @media only screen and (max-width: $point_5) {
-	.home_page_gallery .item_label_box {
+	.home_page_gallery .item_text_box {
 		white-space: normal;
 	}
-	.home_page_gallery .item_label_link--video_cc_mod {
+	.home_page_gallery .item_video_link--cc_mod {
 		border-width: 2.4rem 0 2.4rem 4rem;
 	}
 }
